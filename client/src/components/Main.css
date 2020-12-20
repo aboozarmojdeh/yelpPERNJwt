@@ -1,0 +1,16 @@
+.mainPage-h1{
+    font-size: 4rem;
+    font-family: sans-serif;
+    color: #2977c9;
+    font-weight: 200;
+    line-height: 100px;
+}
+
+.mainPage-h2{
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: rgba(0,0,0,0.9);;
+    font-weight: 200;
+    line-height: 50px;
+}
+   
