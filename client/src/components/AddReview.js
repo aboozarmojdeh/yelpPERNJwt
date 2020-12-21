@@ -91,6 +91,13 @@ const AddReview = () => {
         >
           Submit
         </button>
+        <a
+          
+          className="btn btn-primary"
+          href="/dashboard"
+        >
+          Back
+        </a>
       </form>
     </div>
   );

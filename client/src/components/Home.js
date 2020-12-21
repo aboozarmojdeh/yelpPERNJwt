@@ -64,6 +64,7 @@ const Home = ({ setAuth }) => {
 
   return (
     <Fragment>
+      
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <button
@@ -98,10 +99,10 @@ const Home = ({ setAuth }) => {
         <img src={modelPic} alt="Sign-in" width="250" height="150" />
       </div>
       <div className='container'>
-        
+      <AddRestaurant />
+      <RestaurantList />
       </div>
-                <AddRestaurant />
-          <RestaurantList />
+         
 {/* // Search are temporary closed */}
 <hr />
 <h4>search area temporary closed</h4>

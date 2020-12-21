@@ -45,7 +45,7 @@ const AddRestaurant = () => {
                         <input value={location} onChange={locationChange} className='form-control' type='text' placeholder='location' />
                     </div>
                     <div className='col'>
-                        <select value={priceRange} onChange={priceChange} className='custom-select my-1 mr-sm-2'>
+                        <select value={priceRange} onChange={priceChange} className='my-1 mr-sm-2'>
                             <option disabled={true}>Price Range</option>
                             <option value='1'>$</option>
                             <option value='2'>$$</option>

@@ -43,7 +43,7 @@ const updateRestaurant=await RestaurantFinder.put(`/${id}`,{
     location:location,
     price_range:priceRange
 })
-history.push('/');
+history.push('/dashboard');
     };
     
     return (

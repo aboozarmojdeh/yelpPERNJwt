@@ -13,6 +13,8 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Main from "./components/Main";
+import UpdatePage from './routes/UpdatePage';
+import RestaurantDetailPage from './routes/RestaurantDetailPage';
 import {RestaurantContextProvider} from './context/RestaurantsContext';
 
 toast.configure();
@@ -48,6 +50,7 @@ const App = () => {
         <div className="container">
           <Switch>
             <Route exact path="/" render={(props) => <Main {...props} />} />
+
             <Route
               exact
               path="/login"
@@ -76,6 +79,31 @@ const App = () => {
               render={(props) =>
                 isAuthenticated ? (
                   <Home {...props} setAuth={setAuth} />
+                ) : (
+                  <Redirect to="/login" />
+                )
+              }
+            />
+
+
+            <Route
+              exact
+              path="/restaurants/:id/update"
+              render={(props) =>
+                isAuthenticated ? (
+                  <UpdatePage {...props} setAuth={setAuth} />
+                ) : (
+                  <Redirect to="/login" />
+                )
+              }
+            />
+
+<Route
+              exact
+              path="/restaurants/:id"
+              render={(props) =>
+                isAuthenticated ? (
+                  <RestaurantDetailPage {...props} setAuth={setAuth} />
                 ) : (
                   <Redirect to="/login" />
                 )
