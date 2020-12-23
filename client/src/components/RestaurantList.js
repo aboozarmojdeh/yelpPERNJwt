@@ -19,7 +19,8 @@ const RestaurantList = (props) => {
       }
     };
     fetchData();
-    // uiFacesFetch();
+    console.log('restaurants',restaurants)
+    uiFacesFetch(restaurants.length);
   }, []);
 
   const uiFacesFetch = async (number) => {
@@ -37,6 +38,7 @@ const RestaurantList = (props) => {
 
     const faces = await response.json();
     setFacePhoto(faces)
+    console.log('faces',faces.length)
     
   };
 
@@ -80,7 +82,7 @@ const RestaurantList = (props) => {
       </Fragment>
     );
   };
-  const restaurantArray = restaurants.map((restaurant) => {
+  const restaurantArray = restaurants.map((restaurant,index) => {
     // uiFacesFetch(restaurants.length);
     return (
       <tr
@@ -91,7 +93,7 @@ const RestaurantList = (props) => {
         <td>{restaurant.location}</td>
         <td>{"$".repeat(restaurant.price_range)}</td>
         <td>{renderRating(restaurant)}</td>
-        <td><img alt='model-face' src={``} style={{borderRadius:'50%'}} width='100px' height='100px'/></td>
+        <td>{!facePhoto.length ? <div>Waiting</div>:<img alt='model-face' src={facePhoto[index].photo} style={{borderRadius:'50%'}} width='100px' height='100px'/>}</td>
         <td>
           <button
             onClick={(e) => handleUpdateRestaurant(e, restaurant.id)}
